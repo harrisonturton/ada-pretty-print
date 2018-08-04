@@ -5,6 +5,8 @@ This is a package to make printing styled text (in the Terminal) *really* easy.
 This package aims to make debugging multiple tasks a bit easier. Rather than examining lines of blank text, make each
 task print in a different color!
 
+![Screenshot of Ada Pretty Print](screenshot.png)
+
 **Uses ANSI escape sequences, so won't work on every terminal (Especially Windows).**
 
 ## Installation
