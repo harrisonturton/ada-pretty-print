@@ -23,7 +23,7 @@ them. See your `.gpr` files for more info on what's in your namespace.
 ## Usage
 
 **Overview**
-```
+```ada
 Put_Green("This is green");
 Put_Red("This is red");
 
@@ -40,7 +40,7 @@ Put_Line("My name is " & Magenta("Patrick")); -- Nested colors, printed using Ad
 Importing the package is hardest part. Since we want each task to have a different color, we need to
 tell `Pretty_Print` *how many tasks we have*.
 
-```
+```ada
 with Pretty_Print;
 
 procedure Main is
@@ -52,7 +52,7 @@ end;
 ```
 
 **Colors**
-```
+```ada
 My_Line : String := Green("Hello!"); -- Make the string green
 Put_Line(My_Line); -- Print using the standard Ada.Text_IO package
 
@@ -62,7 +62,7 @@ Put_Line("Hello, my name is " & With_Color(Magenta, "Patrick")); -- Nest colors 
 ```
 
 **Styles**
-```
+```ada
 A : String := Bold("Big bold text.");
 B : String := With_Effect(Underline, "Underlined text."); -- Specify single effects
 C : String := With_Effect((Bold, Underline), "Bold & Underlined!"); -- Specify multiple overlayed effects
@@ -73,14 +73,14 @@ Put_Effect((Bold, Italic), "Bold & Italic"); -- Print them all at once
 ```
 
 **Combined Colors & Effects**
-```
+```ada
 A : String := With_Style(Green, (Bold, Underline), "Fancy text!");
 Put_Line(A);
 Put_Style(Green, Bold, "Almost as fancy.");
 ```
 
 **Different colored Tasks**
-```
+```ada
 package Task_Print is new Pretty_Print (5); -- Number of tasks we have. Can be 0!
 use Task_Print;
 ...
