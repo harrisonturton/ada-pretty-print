@@ -79,6 +79,8 @@ package body Pretty_Print is
   -- With_Effect combines multiple effects, and applied the relevant
   -- ANSI codes to style the String.
   function With_Effect (E : Effect_List; S : String) return String is
+    -- Uses Unbounded_String because the length of Effect_List
+    -- is indefinite, so the String isn't fixed-length.
     Result    : Unbounded_String := To_Unbounded_String(ESC & "[");
     Str       : Unbounded_String := To_Unbounded_String(S);
     Seperator : Unbounded_String := To_Unbounded_String(";");
@@ -102,6 +104,8 @@ package body Pretty_Print is
   -- With_Style applies a Color, and multiple combined text effects
   -- to a String.
   function With_Style (C : Color; E : Effect_List; S : String) return String is
+    -- Uses Unbounded_String because the length of Effect_List
+    -- is indefinite, so the String isn't fixed-length.
     Result    : Unbounded_String := To_Unbounded_String(ESC & "[" & Color_Table(C).all & ";");
     Str       : Unbounded_String := To_Unbounded_String(S);
     Seperator : Unbounded_String := To_Unbounded_String(";");
