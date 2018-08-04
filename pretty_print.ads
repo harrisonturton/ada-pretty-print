@@ -25,8 +25,8 @@ package Pretty_Print is
   type Effect_List is array (Positive range <>) of Effect;
 
   -- Style a string by a colour & any number of effects.
-  function Style (C : Color; E : Effect; S : String) return String;
-  function Style (C : Color; E : Effect_List; S : String) return String;
+  function With_Style (C : Color; E : Effect; S : String) return String;
+  function With_Style (C : Color; E : Effect_List; S : String) return String;
 
   -- Colour a string
   function With_Color  (C : Color;  S : String) return String;

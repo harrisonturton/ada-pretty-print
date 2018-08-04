@@ -81,10 +81,10 @@ package body Pretty_Print is
     return To_String(Result) & ESC & Reset_Code;
   end;
 
-  function Style (C : Color; E : Effect; S : String) return String is
+  function With_Style (C : Color; E : Effect; S : String) return String is
     (ESC & "[" & Color_Table(C).all & ";" & Effect_Table(E).all & "m" & S & ESC & Reset_Code);
 
-  function Style (C : Color; E : Effect_List; S : String) return String is
+  function With_Style (C : Color; E : Effect_List; S : String) return String is
     Result    : Unbounded_String := To_Unbounded_String(ESC & "[" & Color_Table(C).all & ";");
     Str       : Unbounded_String := To_Unbounded_String(S);
     Seperator : Unbounded_String := To_Unbounded_String(";");
@@ -135,12 +135,12 @@ package body Pretty_Print is
 
   procedure Put_Style (C : in Color; E : in Effect; S : in String) is
   begin
-    Put_Line(Style(C, E, S));
+    Put_Line(With_Style(C, E, S));
   end;
 
   procedure Put_Style (C : in Color; E : in Effect_List; S : in String) is
   begin
-    Put_Line(Style(C, E, S));
+    Put_Line(With_Style(C, E, S));
   end;
 
   procedure Put_Task  (Index : in Positive; S : in String) is
