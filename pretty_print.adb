@@ -133,14 +133,14 @@ package body Pretty_Print is
     (With_Effect(Effect'Val((Index mod No_Of_Tasks) + 1), S));
 
   -- Each of these just makes the String a certain color.
-  function Black   (S : String) return String is (With_Color(Black,  S));
-  function Red     (S : String) return String is (With_Color(Red,    S));
-  function Green   (S : String) return String is (With_Color(Green,  S));
-  function Yellow  (S : String) return String is (With_Color(Yellow, S));
-  function Blue    (S : String) return String is (With_Color(Yellow, S));
-  function Magenta (S : String) return String is (With_Color(Yellow, S));
-  function Cyan    (S : String) return String is (With_Color(Yellow, S));
-  function White   (S : String) return String is (With_Color(Yellow, S));
+  function Black   (S : String) return String is (With_Color(Black,   S));
+  function Red     (S : String) return String is (With_Color(Red,     S));
+  function Green   (S : String) return String is (With_Color(Green,   S));
+  function Yellow  (S : String) return String is (With_Color(Yellow,  S));
+  function Blue    (S : String) return String is (With_Color(Blue,    S));
+  function Magenta (S : String) return String is (With_Color(Magenta, S));
+  function Cyan    (S : String) return String is (With_Color(Cyan,    S));
+  function White   (S : String) return String is (With_Color(White,   S));
 
   -- Each of these just gives the String a certain effect.
   function Bold       (S : String) return String is (With_Effect(Bold,       S));
